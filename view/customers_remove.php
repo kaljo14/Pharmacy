@@ -7,9 +7,9 @@ include_once 'conect.php';
 <head>
   <meta charset ="utf-8">
  
-  <title> Sales</title>
+  <title>Delete Customer</title>
   <meta name ="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="stylesCustomers1.css">
+  <link rel="stylesheet" href="../css/stylesCustomers1.css">
 
 </head>
 <header>

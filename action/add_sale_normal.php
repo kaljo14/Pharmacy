@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])){
-include_once 'conect.php';
+include_once 'include/conect.php';
 
 
 $emp_id= mysqli_real_escape_string($conn,$_POST['emp_id']);
@@ -31,7 +31,7 @@ $sql ="SELECT * FROM Drugs WHERE drug_id=$drug_id;";
                     $drug_count = $drug_count-$amount_d;
                     echo "$drug_count";
 
-                    
+
 
     $sql =" UPDATE Drugs SET quantity='$drug_count' WHERE drug_id ='$drug_id'; ";
 

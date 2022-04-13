@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])){
-include 'conect.php';
+include 'include/conect.php';
 
 $client_id= mysqli_real_escape_string($conn,$_POST['client_id']);
 $emp_id= mysqli_real_escape_string($conn,$_POST['emp_id']);

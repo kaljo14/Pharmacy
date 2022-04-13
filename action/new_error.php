@@ -1,5 +1,5 @@
 <?php
-include 'conect.php';
+include 'include/conect.php';
 if (isset($_POST['submit'])){
 
         include_once 'conect.php';

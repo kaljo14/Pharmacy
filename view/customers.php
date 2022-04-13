@@ -1,5 +1,5 @@
 <?php
-include_once 'conect.php';
+include_once 'include/conect.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include_once 'conect.php';
   
   <title> Customers</title>
   <meta name ="viewport" content="width=device-width,initial-scale=1.0">
-     <link rel="stylesheet" href="stylesCustomers1.css"> 
+     <link rel="stylesheet" href="../css/stylesCustomers1.css"> 
 </head>
  <header>
             <a href ="customers.php" class="logo">Pharmacy</a>

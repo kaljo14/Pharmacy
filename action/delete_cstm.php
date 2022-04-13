@@ -2,7 +2,7 @@
 // gives error message for customers
 if (isset($_POST['submit'])){
 
-        include_once 'conect.php';
+        include_once 'include/conect.php';
         //echo is for check 
         echo "yes";
     $client_id= mysqli_real_escape_string($conn,$_POST['client_id']);
