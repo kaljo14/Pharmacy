@@ -1,5 +1,5 @@
 <?php
-  include_once 'include/conect.php';
+  include_once '../include/conect.php';
 $client_id= mysqli_real_escape_string($conn,$_POST['client_id']);
 $sql = "DELETE FROM Client WHERE client_id=$client_id";
 

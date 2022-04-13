@@ -2,7 +2,7 @@
 $dbServername ="localhost";
 $dbUsername="root";
 $dbPassword="";
-$dbName ="Pharmacy";
+$dbName ="Test1";
 
 
 // Create connection

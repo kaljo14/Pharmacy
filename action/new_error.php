@@ -2,7 +2,7 @@
 include 'include/conect.php';
 if (isset($_POST['submit'])){
 
-        include_once 'conect.php';
+        include_once '../include/conect.php';
         //echo is for check 
         //echo "yes";
     $first_name = $_POST['first_name'];
@@ -11,13 +11,13 @@ if (isset($_POST['submit'])){
     $phone = $_POST['phone'];
     //Check if inputs are empty 
     if (empty($first_name) ||empty($last_name) || empty($address) || empty($phone)){
-        header("Location: ../customers.php?signup=empty");
+        header("Location: ../view/customers.php?signup=empty");
         exit();
     }
     else{
     // Check if input is characters 
         if (!preg_match("/^[a-zA-Z]*$/",$first_name) || !preg_match("/^[a-zA-Z]*$/",$last_name)){
-            header("Location: ../customers.php?signup=char&address=$address&phone=$phone");
+            header("Location: ../view/customers.php?signup=char&address=$address&phone=$phone");
             exit();
         }
         else{     
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])){
                 mysqli_query($conn,$sql);
                 
 
-                header("Location: ../customers.php?signup=success");
+                header("Location: ../view/customers.php?signup=success");
             exit();}
         }
 
@@ -52,7 +52,7 @@ if (isset($_POST['submit'])){
 
     }
     else{
-        header("Location: ../customers.php?signup=notUsed");
+        header("Location: ../view/customers.php?signup=notUsed");
         }
 ?>
 

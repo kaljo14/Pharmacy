@@ -12,28 +12,8 @@ include_once 'include/conect.php';
   <link rel="stylesheet" href="../css/sales.css">
 
 </head>
-<header>
-            <a href ="customers.php" class="logo">Pharmacy</a>
 
-            <nav>
-                <ul class="nav_links">
-                    <!-- <li><a href="pharmacy.php">Home</a></li> -->
-                    <li><a href="customers.php"> Customers</a></li>
-                    <li><a href="sales_p.php"> Sales</a>
-                            <ul >
-                             <li><a href= "sales_p.php"> Perscription Sale</a>
-                             <li><a href= "sales_normal.php"> Normal Sale </a>
-
-                            </ul>
-
-
-                </li>
-
-                    <li><a href="drugs.php"> Commissions</a></li>
-                    <li><a href="reports.php"> Reports</a></li>
-                </ul>
-            </nav>
-</header>
+<?php require "../include/header.html" ?>
 
 <body>
         
@@ -42,7 +22,7 @@ include_once 'include/conect.php';
     <div class = "form-style-2">
         <h1>Record the sale </h1>
 
-        <form class="addinginformation" action="add_sale_normal.php" method ="POST">
+        <form class="addinginformation" action="../action/add_sale_normal.php" method ="POST">
             
         <!-- <label for="card">Client ID : </label><br>
             <input type ="number" id="client_id" name= "client_id" placeholder= "Client ID"> -->

@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])){
-include_once 'include/conect.php';
+include_once '../include/conect.php';
 
 
 $emp_id= mysqli_real_escape_string($conn,$_POST['emp_id']);
@@ -65,12 +65,12 @@ if (mysqli_query($conn, $sql)) {
   echo "Error deleting record: " . mysqli_error($conn);
 }
                     // $commission=0;
-                 header("Location: ../sales_normal.php?signup=notUsed");
+                 header("Location: ../view/sales_normal.php?signup=notUsed");
             
 }
 
     else{
-        header("Location: ../sales_normal.php?signup=notUsed");
+        header("Location: ../view/sales_normal.php?signup=notUsed");
         }
  
 

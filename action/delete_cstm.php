@@ -2,15 +2,15 @@
 // gives error message for customers
 if (isset($_POST['submit'])){
 
-        include_once 'include/conect.php';
+        include_once '../include/conect.php';
         //echo is for check 
-        echo "yes";
+        
     $client_id= mysqli_real_escape_string($conn,$_POST['client_id']);
     $phone = $_POST['phone'];
     //Check if inputs are empty 
     
     if ( !empty($client_id) && !empty($phone)){
-        header("Location: ../customers_remove.php?signup=empty");
+        header("Location: ../view/customers_remove.php?signup=empty");
         exit();
     }
     else{
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])){
 
                 
                 
-                include_once 'conect.php';
+                include_once '../include/conect.php';
                 $client_id= mysqli_real_escape_string($conn,$_POST['client_id']);
                 $sql = "DELETE FROM Client WHERE client_id=$client_id";
 
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])){
                 mysqli_query($conn,$sql);
                 
 
-                header("Location: ../customers_remove.php?signup=success");
+                header("Location: ../view/customers_remove.php?signup=success");
             exit();
         
 
@@ -41,6 +41,6 @@ if (isset($_POST['submit'])){
 
     }
     else{
-        header("Location: ../customers.php?signup=notUsed");
+        header("Location: ../view/customers.php?signup=notUsed");
         }
 ?>

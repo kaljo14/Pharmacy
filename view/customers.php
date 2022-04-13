@@ -1,5 +1,5 @@
 <?php
-include_once 'include/conect.php';
+include_once '../include/conect.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,23 +11,10 @@ include_once 'include/conect.php';
   <meta name ="viewport" content="width=device-width,initial-scale=1.0">
      <link rel="stylesheet" href="../css/stylesCustomers1.css"> 
 </head>
- <header>
-            <a href ="customers.php" class="logo">Pharmacy</a>
 
-            <nav>
-                <ul class="nav_links">
-                    <!-- <li><a href="pharmacy.php">Home</a></li> -->
-                    <li><a href="customers.php"> Customers</a></li>
-                    <li><a href="sales_p.php"> Sales</a> <ul >
-                             <li><a href= "sales_p.php"> Perscription Sale</a>
-                             <li><a href= "sales_normal.php"> Normal Sale </a>
+<?php require "../include/header.html" ?>
 
-                            </ul></li>
-                    <li><a href="drugs.php"> Commissions</a></li>
-                    <li><a href="reports.php"> Reports</a></li>
-                </ul>
-            </nav>
-        </header>
+
     <body>
         <div class="grid">
                     <div class ="border" >
@@ -39,7 +26,7 @@ include_once 'include/conect.php';
         <div class ="borderform">
         <div class ="form-style" >
             <h1>Add customers </h1>
-                <form   action = "new_error.php" method ="POST">
+                <form   action = "../action/new_error.php" method ="POST">
                     <!-- <label for="name">First Name</label><br> -->
                     <input type ="text"  name= "first_name" placeholder= "First Name">
                     <input type ="text"  name= "last_name" placeholder= "Last Name">

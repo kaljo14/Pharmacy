@@ -1,5 +1,5 @@
 <?php
-include_once 'include/conect.php';
+include_once '../include/conect.php';
 
 ?>
 <!DOCTYPE html>
@@ -7,44 +7,26 @@ include_once 'include/conect.php';
 <head>
   <meta charset ="utf-8">
  
-  <title> Sales</title>
+  <title> Commissions</title>
   <meta name ="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="../css/sales.css">
 
 </head>
-<header>
-            <a href ="customers.php" class="logo">Pharmacy</a>
 
-            <nav>
-                <ul class="nav_links">
-                    <!-- <li><a href="pharmacy.php">Home</a></li> -->
-                    <li><a href="customers.php"> Customers</a></li>
-                    <li><a href="sales_p.php"> Sales</a>
-                            <ul >
-                             <li><a href= "sales_p.php"> Perscription Sale</a>
-                             <li><a href= "sales_normal.php"> Normal Sale </a>
+<?php require "../include/header.html" ?>
 
-                            </ul>
+<body>
+  <div class="grid">
+  <div class = "form-style-2">
+  <form method="POST" action="#">
+  <h1>Report Commission For Employee </h1>
 
-
-                </li>
-
-                    <li><a href="drugs.php"> Commissions</a></li>
-                    <li><a href="reports.php"> Reports</a></li>
-                </ul>
-            </nav>
-</header>
-    <body>
-        <div class="grid">
-        <div class = "form-style-2">
-        <form method="POST" action="#">
-                    <h1>Report Commission For Employee </h1>
-
-<input type="number" name ="emp_id" placeholder="Employee ID">
-            <button type= "submit" name="submit" >Submit info</button>
-        </form>
-</div>
-     <div class ="report">   
+  <input type="number" name ="emp_id" placeholder="Employee ID">
+  <button type= "submit" name="submit" >Submit info</button>
+  </form>
+  </div>
+  <div class ="report">  
+     
 <?php
 if (isset($_POST['submit'])){
 $emp_id = mysqli_real_escape_string($conn,$_POST['emp_id']);

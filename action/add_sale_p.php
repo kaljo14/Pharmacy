@@ -1,13 +1,13 @@
 <?php
 if (isset($_POST['submit'])){
-include 'include/conect.php';
+include '../include/conect.php';
 
 $client_id= mysqli_real_escape_string($conn,$_POST['client_id']);
 $emp_id= mysqli_real_escape_string($conn,$_POST['emp_id']);
 $drug_id=mysqli_real_escape_string($conn,$_POST['drug_id']);
 $sale_date=mysqli_real_escape_string($conn,$_POST['sale_date']);
 if (empty($client_id) ||empty($emp_id) || empty($drug_id) || empty($sale_date)){
-        header("Location: ../sales_p.php?signup=empty");
+        header("Location: ../view/sales_p.php?signup=empty");
         exit();
     }
 $sql =" INSERT INTO sale_prescription ( client_id,emp_id,drug_id,sale_date)
@@ -31,7 +31,7 @@ $sql ="SELECT * FROM Employee WHERE emp_id =$emp_id ;";
                      }
                 }
                 else {
-                      header("Location: ../sales_p.php?signup=NoSuchemp");    
+                      header("Location: ../view/sales_p.php?signup=NoSuchemp");    
                 }
                    if ($emp_check == 2){
                                                 $sql ="SELECT * FROM Drugs WHERE drug_id='$drug_id';";
@@ -62,10 +62,10 @@ $sql ="SELECT * FROM Employee WHERE emp_id =$emp_id ;";
                                 echo "Error deleting record: " . mysqli_error($conn);
                               }
 
-                          header("Location: ../sales_p.php?signup=sold");
+                          header("Location: ../view/sales_p.php?signup=sold");
 
                     }
-                    else{header("Location: ../sales_p.php?signup=EmpMustHaveLicence");}
+                    else{header("Location: ../view/sales_p.php?signup=EmpMustHaveLicence");}
 
   
   
@@ -73,7 +73,7 @@ $sql ="SELECT * FROM Employee WHERE emp_id =$emp_id ;";
   }
   //  proverka na licenza na prodavacha 
     else{
-        header("Location: ../sales_p.php?signup=notUsed");
+        header("Location: ../view/sales_p.php?signup=notUsed");
         }
 
 
