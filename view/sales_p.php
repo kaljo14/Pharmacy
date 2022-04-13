@@ -36,12 +36,13 @@ include_once 'include/conect.php';
             <button type= "submit" name="submit" >Submit info</button>
         </form>
             <?php
-            if (!isset($_GET['signup'])){
+            if (isset($_GET['signup'])){
 
-            }
-            else{
+            
                 $signupChek = $_GET['signup'];
-                if($singupCheck == 'empty'){
+                
+                if($signupChek == 'empty'){
+                    
                   echo "<p class = 'error' > You need to enter information in every field!<p>";
                     exit();
                     }
@@ -49,7 +50,7 @@ include_once 'include/conect.php';
                     echo "<p class = 'error' >Employee has no licence to sell prescription drugs <p>";
                 exit();
                 }
-                elseif ($signupChek == ' NoSuchemp'){
+                elseif ($signupChek == 'NoSuchemp'){
                     echo " <p class == 'error'> There is no such employee ID.Please try again<p>";
                                     exit();
 

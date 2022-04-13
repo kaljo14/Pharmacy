@@ -1,4 +1,6 @@
 <?php
+ini_set("display_errors", "1");
+  error_reporting(E_ALL);
 if (isset($_POST['submit'])){
 include_once '../include/conect.php';
 
@@ -9,6 +11,11 @@ $amount_d=mysqli_real_escape_string($conn,$_POST['amount_d']);
 
 $sale_date=mysqli_real_escape_string($conn,$_POST['sale_date']);
 $cash_or_card= mysqli_real_escape_string($conn,$_POST['cash_or_card']);
+
+if (empty($emp_id) || empty($drug_id) || empty($sale_date) || empty($amount_d)){
+        header("Location: ../view/sales_p.php?signup=empty");
+        exit();
+    }
 
 
 $sql ="SELECT * FROM Drugs WHERE drug_id=$drug_id;";
@@ -37,7 +44,7 @@ $sql ="SELECT * FROM Drugs WHERE drug_id=$drug_id;";
 
 //mysqli_query($conn,$sql);
     if (mysqli_query($conn, $sql)) {
-      echo "Record deleted successfully";
+      echo "Recored successfully";
     } else {
       echo "Error deleting record: " . mysqli_error($conn);
     }
@@ -54,9 +61,11 @@ $sql ="SELECT * FROM Drugs WHERE drug_id=$drug_id;";
                     echo "from here:".$amount_d."<br>";
                     echo $drug_price."<br>";
                     echo $commis_percent."<br>";
-    $commission=($amount_d*$drug_price)*$commis_percent;
+                    $commission=($amount_d*$drug_price)*$commis_percent;
                     echo $commission;
-                    $sql =" INSERT INTO sale_normal (emp_id,drug_id,amount_d,sale_date,cash_or_card,Commission)
+                    
+                    
+$sql =" INSERT INTO sale_normal (emp_id,drug_id,amount_d,sale_date,cash_or_card,Commission)
 VALUES('$emp_id','$drug_id','$amount_d','$sale_date','$cash_or_card','$commission');";
 // mysqli_query($conn,$sql);
 if (mysqli_query($conn, $sql)) {
@@ -64,8 +73,8 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error deleting record: " . mysqli_error($conn);
 }
-                    // $commission=0;
-                 header("Location: ../view/sales_normal.php?signup=notUsed");
+    
+                 header("Location: ../view/sales_normal.php?signup=sold");
             
 }
 

@@ -49,6 +49,31 @@ include_once 'include/conect.php';
             </div>
             <button type= "submit" name="submit" >Submit info</button>
         </form>
+         <?php
+            if (!isset($_GET['signup'])){
+
+            }
+            else{
+                $signupChek = $_GET['signup'];
+                if($singupCheck == 'empty'){
+                  echo "<p class = 'success' > You need to enter information in every field!<p>";
+                    exit();
+                    }
+                elseif($signupChek =='EmpMustHaveLicence'){
+                    echo "<p class = 'error' >Employee has no licence to sell prescription drugs <p>";
+                exit();
+                }
+                elseif ($signupChek == 'NoSuchemp'){
+                    echo " <p class == 'error'> There is no such employee ID.Please try again<p>";
+                                    exit();
+
+                }
+            elseif($signupChek == 'sold'){
+                echo "<p class = 'success' > Item sold successfuly <p>";
+                exit();
+            }
+            }
+            ?>
     </div>
   
        
