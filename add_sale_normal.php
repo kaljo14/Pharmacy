@@ -31,6 +31,8 @@ $sql ="SELECT * FROM Drugs WHERE drug_id=$drug_id;";
                     $drug_count = $drug_count-$amount_d;
                     echo "$drug_count";
 
+                    
+
     $sql =" UPDATE Drugs SET quantity='$drug_count' WHERE drug_id ='$drug_id'; ";
 
 //mysqli_query($conn,$sql);
